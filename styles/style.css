@@ -17,9 +17,7 @@ body{
 main{
     background-color: #fff;
     width: 600px;
-    /* height: 200px; */
     display: flex;
-    /* justify-content: center; */
     padding: 20px;
     border-radius: 10px;
     flex-direction:column ;
@@ -39,7 +37,7 @@ input[type = 'text']{
 button{
     height: 40px;
     border: none;
-    background-color: #9911b4;
+    background-color: #c525e6;
     width: 100px;
     border-radius: 10px ;
     color: #fff;
@@ -47,17 +45,16 @@ button{
     transition: transform 0.4s ease-in, background-color 0.4s ease-in;
 }
 button:hover{
-    background-color: #a244b4;
+    background-color: #cb3ee7;
     transform: translateY(-5px);
 }
 ul{
-    margin-top: 15px;
-    margin-left: 15px;
     list-style: none;
 }
 li{
-    width: 70%;
-    height: 50px;
-    background-image: linear-gradient(to right, #948f8f, #949393c2);
+    background-color: rgba(181, 182, 184, 0.356);
     margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
 }

@@ -1,22 +1,24 @@
-const input = document.querySelector('#input')
-const btn = document.querySelector('button')
-const tasks = document.querySelector('#tasks')
-const arrayTasks = []
+const input = document.querySelector("#input");
+const btn = document.querySelector("button");
+const tasks = document.querySelector("#tasks");
+const arrayTasks = [];
 function addTask() {
-    arrayTasks.push(input.value)
-    display()
+  arrayTasks.push(input.value);
+  input.value = ''
+  display();
 }
 function display() {
-    
-        let displayTasks = ''
-        arrayTasks.forEach(task => {
-            displayTasks = displayTasks + `
+    let displayTasks = "";
+    arrayTasks.forEach((task) => {
+      displayTasks =
+        displayTasks +
+        `
             <li>
                 <p>${task}</p>
             </li>
-        `
-        })
-        tasks.innerHTML = displayTasks
-    }
+        `;
+    });
+    tasks.innerHTML = displayTasks;
+}
 
-btn.addEventListener('click', addTask)
+btn.addEventListener("click", addTask);
