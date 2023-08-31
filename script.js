@@ -1,24 +1,34 @@
 const input = document.querySelector("#input");
 const btn = document.querySelector("button");
 const tasks = document.querySelector("#tasks");
-const arrayTasks = [];
+let arrayTasks = [];
 function addTask() {
-  arrayTasks.push(input.value);
+  const errorMsg = document.querySelector('#error')
+  if(input.value.trim() === '') {
+    errorMsg.innerHTML = 'Insira uma tarefa';
+    errorMsg.style.color = 'red';
+    errorMsg.style.fontSize = '13px';
+    return; 
+}else{
+  errorMsg.style.display = 'none'
+  arrayTasks.push(input.value.toUpperCase())
   input.value = ''
-  display();
+  return display()
+}
 }
 function display() {
-    let displayTasks = "";
-    arrayTasks.forEach((task) => {
-      displayTasks =
-        displayTasks +
-        `
+  let displayTasks = '';
+  arrayTasks.forEach((task) => {
+    displayTasks =
+      displayTasks +
+      `
             <li>
                 <p>${task}</p>
             </li>
         `;
-    });
-    tasks.innerHTML = displayTasks;
+  });
+  tasks.innerHTML = displayTasks;
 }
 
 btn.addEventListener("click", addTask);
+
